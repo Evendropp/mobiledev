@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
     protected void onRestart() {
         super.onRestart();
         appendState("onRestart");
+        
     }
 
     @Override
