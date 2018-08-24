@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">3_2P</string>
+    <string name="inches">Convert Inches</string>
+    <string name="centi">Centimetres</string>
 </resources>
