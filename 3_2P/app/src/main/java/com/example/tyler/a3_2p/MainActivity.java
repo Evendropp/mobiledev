@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v)
         {
             EditText inputInch = findViewById(R.id.inchesText);
-            TextView convertInch = findViewById(R.id.centimeters);
             String dInch = changeInches(inputInch.getText().toString());
+            TextView convertInch = findViewById(R.id.centimeters);
             convertInch.setText(dInch);
         }
     };
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             double cm = Double.parseDouble(dCm);
             double inch = cm*(2.54);
-            return String.format(3.3f, inch);
+            return String.format("%3.2f", inch);
         }
         catch (NumberFormatException nfe)
         {
