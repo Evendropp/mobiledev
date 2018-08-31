@@ -13,35 +13,56 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button convertInches = findViewById(R.id.buttonInches);
-        convertInches.setOnClickListener(convertInchesListen);
+        initialiseUI();
+
+    }
+    /*User interface initialisation*/
+    public void initialiseUI()
+    {
+        /*Button Listener init*/
+        Button convertButton = findViewById(R.id.convertButton);
+        convertButton.setOnClickListener(convertButtList);
     }
 
     /*convert inches listener*/
-    View.OnClickListener convertInchesListen = new View.OnClickListener()
+    View.OnClickListener convertButtList = new View.OnClickListener()
     {
         @Override
         public void onClick(View v)
         {
-            EditText inputInch = findViewById(R.id.inchesText);
-            String dInch = changeInches(inputInch.getText().toString());
-            TextView convertInch = findViewById(R.id.centimeters);
-            convertInch.setText(dInch);
+            convertInch();
         }
     };
 
-
-    /*convert inches*/
-    public String changeInches(String dCm)
+    public void convertInch()
     {
-        try {
-            double cm = Double.parseDouble(dCm);
-            double inch = cm*(2.54);
-            return String.format("%3.2f", inch);
-        }
-        catch (NumberFormatException nfe)
-        {
-            return "error with input";
-        }
+        EditText inputInch = findViewById(R.id.inchesText);
+        String dInch = convertImperialCm(inputInch.getText().toString(),"inch");
+        TextView convertInch = findViewById(R.id.centimeters);
+        convertInch.setText(dInch);
     }
+    /*convert imperial to centimeters given imperial type*/
+    public String convertImperialCm(String dText, String type)
+    {
+            switch (type) {
+                case "inch": {
+                    double cm = Double.parseDouble(dText);
+                    double inch = cm * (2.54);
+                    return String.format("%3.2f", inch);
+                }
+                case "feet": {
+                    double cm = Double.parseDouble(dText);
+                    double feet = cm * (2.54) * (12);
+                    return String.format("%3.2f", feet);
+                }
+                case "miles": {
+                    double cm = Double.parseDouble(dText);
+                    double miles = cm * (2.54) * (12) * (5280);
+                    return String.format("%3.2f", miles);
+                }
+                default: return "error with input";
+            }
+
+        }
+
 }
