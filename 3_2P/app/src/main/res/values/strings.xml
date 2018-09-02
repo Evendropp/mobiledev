@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">3_2P</string>
+    <string name="inches">Convert All</string>
+    <string name="centi">Centimetres</string>
+    <string name="miles">Miles</string>
+    <string name="feet">Feet</string>
+    <string name="meters">Get Results in meters instead?</string>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/inchesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:ems="10"
+        android:hint="input inches here"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="@string/inches"
+        app:layout_constraintTop_toBottomOf="@+id/milesText"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/centimeters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/centi"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/inchesText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/feetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/feet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inchesText" />
+
+    <TextView
+        android:id="@+id/feet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/feet"
+        android:textSize="25sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="@+id/feetText"
+        app:layout_constraintLeft_toRightOf="@+id/feetText"/>
+
+    <EditText
+        android:id="@+id/milesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/miles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feetText"/>
+
+    <TextView
+        android:id="@+id/miles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/miles"
+        android:textSize="25sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="@+id/milesText"
+        app:layout_constraintLeft_toRightOf="@+id/milesText"/>
+
+</android.support.constraint.ConstraintLayout>
