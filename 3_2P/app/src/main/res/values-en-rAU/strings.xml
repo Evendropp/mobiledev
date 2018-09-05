@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">3_2P</string>
     <string name="inches">Convert All</string>
     <string name="centi">Centimeters</string>
     <string name="miles">Miles</string>
     <string name="feet">Feet</string>
-    <string name="meters">Get Results in meters instead?</string>
+    <string name="meters">Get Results in Meters Instead?</string>
     <string name="ConvertTypeCheck">Convert to Meters instead?</string>
 </resources>

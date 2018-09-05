@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">3_2P</string>
+    <string name="inches">"Konvertieren alle "</string>
+    <string name="centi">"Zentimeter "</string>
+    <string name="miles">"Meilen "</string>
+    <string name="feet">Füße</string>
+    <string name="meters">"Erhalten Sie stattdessen Ergebnisse in Metern? "</string>
+    <string name="ConvertTypeCheck">"In Meter umwandeln? "</string>
+</resources>
