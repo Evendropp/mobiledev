@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tyler.a4_1p">
+    package="com.example.tyler.a4_2p">
 
     <application
         android:allowBackup="true"
@@ -17,21 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TemperatureConv"
-            android:label="Temperature Conversion"
+            android:name=".ImageDisplayActivity"
+            android:label="@string/mango1"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"   />
+                android:value=".MainActivity" />
         </activity>
-        <activity
-            android:name=".DistanceConvert"
-            android:label="Distance Conversion"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"   />
-            </activity>
     </application>
 
 </manifest>

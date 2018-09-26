@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">4_2P</string>
+    <string name="mango1">Mango 1</string>
+    <string name="mango2">Mango 2</string>
+    <string name="mango3">Mango 3</string>
+    <string name="mango4">Mango 4</string>
+    <string name="activeMango"></string>
+</resources>
