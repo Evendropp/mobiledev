@@ -8,4 +8,8 @@
     <string name="feet">Feet</string>
     <string name="meters">Get Results in meters instead?</string>
     <string name="ConvertTypeCheck">Convert to Meters instead?</string>
+
+    <string name="TempIn">Enter Temperature</string>
+    <string name="TempOut">0</string>
+    <string name="TempButton">Convert</string>
 </resources>
