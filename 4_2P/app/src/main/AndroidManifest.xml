@@ -18,7 +18,7 @@
         </activity>
         <activity
             android:name=".ImageDisplayActivity"
-            android:label="@string/mango1"
+            android:label="Active Image"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
