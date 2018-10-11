@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -51,6 +52,20 @@ public class MainActivity extends AppCompatActivity {
             mData = data;
         }
 
+        class ViewHolder extends RecyclerView.ViewHolder
+        {
+            public TextView mTitleText;
+            public TextView mRatingsText;
+            //needs image added
+            public ViewHolder(View v)
+            {
+                super(v);
+                mTitleText = v.findViewById(R.id.item_title);
+                mRatingsText = v.findViewById(R.id.item_rating);
+            }
+
+        }
+
 
         @NonNull
         @Override
@@ -65,12 +80,15 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull bAdapter.ViewHolder viewHolder, int i) {
-
+        String name = mData.get(i);
+        viewHolder.mTitleText.setText(name);
+        Book bk = mbooks.getBook(name);
+        viewHolder.mRatingsText.setText(bk.getRating());
         }
 
         @Override
         public int getItemCount() {
-            return 0;
+            return mData.size();
         }
     }
     View.OnClickListener clickList = new  View.OnClickListener()
