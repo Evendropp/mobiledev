@@ -16,6 +16,7 @@ public class TemperatureConv extends AppCompatActivity {
         initialiseUI(savedInstanceState);
     }
 
+    //on rotate store current info in bundle
     @Override
     protected void onSaveInstanceState(Bundle outState)
     {
@@ -26,7 +27,7 @@ public class TemperatureConv extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-
+    //restore after rotate if possible
     private void restoreState (Bundle state)
     {
         if (state == null)
@@ -39,12 +40,13 @@ public class TemperatureConv extends AppCompatActivity {
 
     }
 
+    // on start up create listener for button and restore any previous data if possible
     public void initialiseUI( Bundle state)
     {
         /*button listener for convert*/
         Button convertButton = findViewById(R.id.convertTemp);
         convertButton.setOnClickListener(convertButtonList);
-        /*bundle restore*/
+        /*bundle restore data*/
         restoreState(state);
         convertButton.callOnClick();
     }
