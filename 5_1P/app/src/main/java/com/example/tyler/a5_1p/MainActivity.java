@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -56,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
         {
             public TextView mTitleText;
             public TextView mRatingsText;
-            //needs image added
+            public ImageView mImage;
             public ViewHolder(View v)
             {
                 super(v);
                 mTitleText = v.findViewById(R.id.item_title);
                 mRatingsText = v.findViewById(R.id.item_rating);
+                mImage = v.findViewById(R.id.item_image);
             }
 
         }
@@ -84,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
         viewHolder.mTitleText.setText(name);
         Book bk = mbooks.getBook(name);
         viewHolder.mRatingsText.setText(bk.getRating());
+        //if image is set then set as image, else set the default launcher icon
+        if(bk.getImage() != null)
+        {
+            viewHolder.mImage.setImageDrawable(bk.getImage());
+        }
+        else viewHolder.mImage.setImageResource(R.drawable.ic_launcher);
         }
 
         @Override
