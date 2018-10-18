@@ -3,4 +3,6 @@
     <string name="image_hints">Image here</string>
     <string name="image_name">Image Name example</string>
     <string name="image_date">Image Date example</string>
+    <string name="hint_name">Edit Name here</string>
+    <string name="saved">Save and return</string>
 </resources>
