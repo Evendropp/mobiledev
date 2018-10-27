@@ -30,6 +30,7 @@ public class FocusImage extends Activity {
         ArrayList<image_data> data = getIntent().getParcelableArrayListExtra("IMAGE_DATA");
         image_data d = data.get(0);
 
+        //setting up texts and data
         EditText name = findViewById(R.id.name);
         EditText location = findViewById(R.id.location);
         EditText keywords = findViewById(R.id.Keywords);
@@ -37,13 +38,26 @@ public class FocusImage extends Activity {
         EditText who = findViewById(R.id.who_found);
         EditText rate = findViewById(R.id.Rating);
         ToggleButton sharing = findViewById(R.id.shareable);
+
+        //if the data isnt null, set up the data on the screen
         if(d != null) {
             if(d.getName()!= null)name.setText(d.getName());
             if(d.getLocation()!=null) location.setText(d.getLocation());
             if(d.getDate() !=null) date.setText(d.getDate());
             if(d.getWho()!= null) who.setText(d.getWho());
             if(d.getIsshared() != null) sharing.setChecked(d.getIsshared());
-            if(d.getRating()== null) rate.setText(d.getRating());
+            try {
+                rate.setText(Integer.toString(d.getRating()));
+            }catch (NumberFormatException nfe)
+            {
+                rate.setText("0");
+            }
+            String words = "";
+            for(int i = 0; i<d.getKeywords().size(); i++)
+            {
+                words += ((d.getKeywords().get(i)) + " ");
+            }
+            keywords.setText(words);
         }
 
         //focus listeners for each edit text
@@ -73,13 +87,16 @@ public class FocusImage extends Activity {
     @Override
     public void onBackPressed()
     {
+        //finalise data inputs
         storeData();
         Intent activityResult = new Intent();
         ArrayList<image_data> imageData = new ArrayList<>();
+        //add image data to send back
         imageData.add(image);
         activityResult.putParcelableArrayListExtra("IMAGE_DATA",imageData);
         activityResult.putExtra("ViewID",getIntent().getStringExtra("name"));
         Log.i("CURRENT_IMAGE", getIntent().getStringExtra("name"));
+        //say were done to the return activity
         setResult(RESULT_OK, activityResult);
 
         super.onBackPressed();
@@ -95,7 +112,7 @@ public class FocusImage extends Activity {
         String location = locationText.getText().toString();
 
         EditText keywordsText = findViewById(R.id.Keywords);
-        String[] keys = keywordsText.getText().toString().split("");
+        String[] keys = keywordsText.getText().toString().split(" ");
         ArrayList<String> keywords = new ArrayList<>(Arrays.asList(keys));
 
         EditText dateText = findViewById(R.id.date);

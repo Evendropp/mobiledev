@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Row_4.setOnClickListener(row_4);
     }
 
-    // row click listener for row 1
+    // click listener for rows
     View.OnClickListener row_1 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
 
-    // on result do so and so
+    // on result do etc...
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 ArrayList<image_data> images = data.getParcelableArrayListExtra("IMAGE_DATA");
                 image_data img = images.get(0);
                 Integer nText = Integer.valueOf(data.getStringExtra("ViewID"));
-
+                // check which data to update
                 TextView textChange;
                 TextView dateChange;
                 switch (nText) {

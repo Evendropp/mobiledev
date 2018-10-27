@@ -85,9 +85,8 @@
         app:layout_constraintTop_toBottomOf="@+id/who_found" />
 
     <TextView
+        style="@style/Custom_texts"
         android:id="@+id/name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/name"
@@ -97,9 +96,8 @@
         app:layout_constraintTop_toTopOf="@+id/name" />
 
     <TextView
+        style="@style/Custom_texts"
         android:id="@+id/location_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/location"
         app:layout_constraintBottom_toTopOf="@+id/Keywords"
         app:layout_constraintEnd_toStartOf="@+id/location"
@@ -107,9 +105,8 @@
         app:layout_constraintTop_toTopOf="@+id/location" />
 
     <TextView
+        style="@style/Custom_texts"
         android:id="@+id/Keywords_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/keywords"
         app:layout_constraintBottom_toTopOf="@+id/date"
         app:layout_constraintEnd_toStartOf="@+id/Keywords"
@@ -117,9 +114,8 @@
         app:layout_constraintTop_toTopOf="@+id/Keywords" />
 
     <TextView
+        style="@style/Custom_texts"
         android:id="@+id/date_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/date"
         app:layout_constraintBottom_toBottomOf="@+id/date"
         app:layout_constraintEnd_toStartOf="@+id/date"
@@ -127,20 +123,17 @@
         app:layout_constraintTop_toTopOf="@+id/date" />
 
     <TextView
+        style="@style/Custom_texts"
         android:id="@+id/share_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/shareable"
         app:layout_constraintBottom_toBottomOf="@+id/shareable"
         app:layout_constraintEnd_toStartOf="@+id/who_found"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shareable"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintTop_toTopOf="@+id/shareable" />
 
     <TextView
+        style="@style/Custom_texts"
         android:id="@+id/who_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/who"
         app:layout_constraintBottom_toTopOf="@+id/Rating"
         app:layout_constraintEnd_toStartOf="@+id/who_found"
@@ -148,9 +141,8 @@
         app:layout_constraintTop_toTopOf="@+id/who_found" />
 
     <TextView
+        style="@style/Custom_texts"
         android:id="@+id/rating_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/rating"
         app:layout_constraintBottom_toBottomOf="@+id/Rating"
         app:layout_constraintEnd_toStartOf="@+id/Rating"

@@ -13,14 +13,14 @@ public class image_data implements Parcelable{
     private ArrayList keywords;
     private Boolean isshared;
     private String who;
-    private int rating;
+    private Integer rating;
 
-    image_data(String name, String location, String date, ArrayList<String> keywords, Boolean isshared, String who, int rating)
+    image_data(String name, String location, String date, ArrayList<String> keywords, Boolean isshared, String who, Integer rating)
     {
         update(name, location, date, keywords, isshared, who, rating);
     }
 
-    public void update(String name, String location, String date, ArrayList<String> keywords, Boolean isshared, String who, int rating)
+    public void update(String name, String location, String date, ArrayList<String> keywords, Boolean isshared, String who, Integer rating)
     {
         this.name = name;
         this.location = location;
@@ -119,7 +119,7 @@ public class image_data implements Parcelable{
         this.who = who;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
