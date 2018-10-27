@@ -7,6 +7,6 @@
     <string name="keywords">Keywords</string>
     <string name="date">Date Obtained</string>
     <string name="shareable">Share Image?</string>
-    <string name="who">WHo Obtained</string>
+    <string name="who">Who Obtained</string>
     <string name="rating">Rating?</string>
 </resources>

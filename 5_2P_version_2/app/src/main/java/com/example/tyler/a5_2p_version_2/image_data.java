@@ -10,12 +10,12 @@ public class image_data implements Parcelable{
     private String name;
     private String location;
     private String date;
-    private ArrayList<String> keywords;
+    private ArrayList keywords;
     private Boolean isshared;
     private String who;
     private int rating;
 
-    public image_data (String name, String location, String date, ArrayList<String> keywords, Boolean isshared, String who, int rating)
+    image_data(String name, String location, String date, ArrayList<String> keywords, Boolean isshared, String who, int rating)
     {
         update(name, location, date, keywords, isshared, who, rating);
     }
@@ -65,7 +65,7 @@ public class image_data implements Parcelable{
         parcel.writeString(name);
         parcel.writeString(location);
         parcel.writeString(date);
-        parcel.writeStringList(keywords);
+        parcel.writeList(keywords);
         parcel.writeByte((byte)(isshared ? 1 : 0));
         parcel.writeString(who);
         parcel.writeInt(rating);
@@ -95,7 +95,7 @@ public class image_data implements Parcelable{
         this.date = date;
     }
 
-    public ArrayList<String> getKeywords() {
+    public ArrayList getKeywords() {
         return keywords;
     }
 
@@ -128,7 +128,6 @@ public class image_data implements Parcelable{
     }
 
     public String toString() {
-        String str = this.name;
-        return str;
+        return this.name;
     }
 }

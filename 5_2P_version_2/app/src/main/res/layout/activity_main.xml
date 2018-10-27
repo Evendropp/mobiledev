@@ -19,13 +19,16 @@
                 android:id="@+id/image_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/mango1"
                 android:adjustViewBounds="true"
-                android:maxWidth="100dp"/>
+                android:contentDescription="@string/test_text"
+                android:maxWidth="100dp"
+                app:srcCompat="@drawable/mango1" />
+
             <LinearLayout
-                android:layout_height="match_parent"
                 android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/name_1"
                     android:layout_width="wrap_content"
@@ -34,6 +37,105 @@
 
                 <TextView
                     android:id="@+id/date_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_text" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ROW2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/test_text"
+                android:maxWidth="100dp"
+                app:srcCompat="@drawable/mango2" />
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_text" />
+
+                <TextView
+                    android:id="@+id/date_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_text" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ROW3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/test_text"
+                android:maxWidth="100dp"
+                app:srcCompat="@drawable/mango3" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_text" />
+
+                <TextView
+                    android:id="@+id/date_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_text" />
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/ROW4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/test_text"
+                android:maxWidth="100dp"
+                app:srcCompat="@drawable/mango4" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_text" />
+
+                <TextView
+                    android:id="@+id/date_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/test_text" />
