@@ -23,7 +23,7 @@ import au.edu.swin.sdmd.suncalculatorjava.calc.GeoLocation;
 
 public class MainActivity extends AppCompatActivity {
 
-    public ArrayList<GeoLocation> LocationsList = new ArrayList<>();
+    public ArrayList<GeoLocation> localList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             locData.setLongitude(longitude);
             TimeZone tz = TimeZone.getTimeZone(timezone);
             GeoLocation geoFromFile = new GeoLocation(cityName,locData.getLatitude(),locData.getLongitude(),tz);
-            LocationsList.add(geoFromFile);
+            localList.add(geoFromFile);
         }
 
         updateTime(year, month, day);
@@ -120,7 +120,21 @@ public class MainActivity extends AppCompatActivity {
         GeoLocation geolocation = new GeoLocation("Melbourne", -37.50, 145.01, tz);*/
         TextView locationView = findViewById(R.id.locationTV);
         String locationText = locationView.getText().toString();
-        for(int i = 0; i < geo )
+        GeoLocation geolocation = new GeoLocation();
+        for(int i = 0; i < localList.size();i++)
+        {
+            String fromFile = localList.get(i).getLocationName();
+            if(locationText.trim().equals(fromFile.trim()))
+            {
+                String name = localList.get(i).getLocationName();
+                double lat = localList.get(i).getLatitude();
+                double longi = localList.get(i).getLongitude();
+                TimeZone timez = localList.get(i).getTimeZone();
+                geolocation = new GeoLocation(name, lat, longi, timez);
+                Log.i("set_name",name);
+            }
+        }
+
 
 
         AstronomicalCalendar ac = new AstronomicalCalendar(geolocation);

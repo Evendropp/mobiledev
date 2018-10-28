@@ -58,7 +58,6 @@ public class LocationList extends AppCompatActivity {
             public TextView nameText;
             public TextView latText;
             public TextView longText;
-            public TextView timeZoneText;
 
             public ViewHolder(View v)
             {
@@ -66,7 +65,6 @@ public class LocationList extends AppCompatActivity {
                 nameText = v.findViewById(R.id.location);
                 latText = v.findViewById(R.id.latitude);
                 longText = v.findViewById(R.id.longitude);
-                timeZoneText = v.findViewById(R.id.timezone);
             }
         }
 
@@ -107,10 +105,10 @@ public class LocationList extends AppCompatActivity {
             {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 int i = locationList.getChildLayoutPosition(v);
-                Log.i("position_clicked",String.valueOf(i));
+               /* Log.i("position_clicked",String.valueOf(i));*/
 
                 String name = mdata.get(i);
-                Log.i("name_grab",name);
+                /*Log.i("name_grab",name);*/
                 intent.putExtra("name",name);
                 setResult(RESULT_OK,intent);
                 finish();
@@ -152,7 +150,6 @@ public class LocationList extends AppCompatActivity {
                 String cityName = data[0];
                 double latitude = Double.parseDouble(data[1]);
                 double longitude = Double.parseDouble(data[2]);
-                String timezone = data[3];
                 android.location.Location locData = new android.location.Location("");
                 locData.setLatitude(latitude);
                 locData.setLongitude(longitude);
