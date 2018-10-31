@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SunCalculatorJava</string>
+    <string name="test_text">test</string>
+    <string name="add_custom_location">Add Custom Location</string>
+    <string name="confirm_button">confirm</string>
+    <string name="name">Name:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="timezone">Time Zone:</string>
+    <string name="input_hint">Enter Here</string>
+</resources>
