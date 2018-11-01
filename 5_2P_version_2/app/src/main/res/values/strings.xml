@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">5_2P_version_2</string>
+    <string name="test_text">Test textView</string>
+    <string name="title_activity_focus_image">FocusImage</string>
+    <string name="name">Name</string>
+    <string name="location">Location</string>
+    <string name="keywords">Keywords</string>
+    <string name="date">Date Obtained</string>
+    <string name="shareable">Share Image?</string>
+    <string name="who">Who Obtained</string>
+    <string name="rating">Rating?</string>
+</resources>
