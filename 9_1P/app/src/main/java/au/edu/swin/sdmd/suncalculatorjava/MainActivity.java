@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         BufferedReader b = null;
         try {
-            b = new BufferedReader(new InputStreamReader(getAssets().open("au_locations.txt")));
+            //get file data
+            //b = new BufferedReader(new InputStreamReader(getAssets().open("au_locations.txt")));
+            b = new BufferedReader(new InputStreamReader(getAssets().open("custom_locations.txt")));
         }
         catch (IOException e)
         {
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             while ((currentLine = b.readLine())!= null)
             {
                 fileData.add(currentLine);
-                Log.i("locationName",currentLine);
+                Log.i("Current_locationName",currentLine);
             }
 
         }

@@ -9,8 +9,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/location_list"
         android:layout_width="match_parent"
-        android:layout_height="442dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/add_custom_location"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

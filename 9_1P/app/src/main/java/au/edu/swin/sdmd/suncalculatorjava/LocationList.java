@@ -58,7 +58,7 @@ public class LocationList extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), AddCustomLocation.class);
-            startActivityForResult(intent,0);
+            startActivity(intent);
         }
     };
 
@@ -130,6 +130,14 @@ public class LocationList extends AppCompatActivity {
         };
     }
 
+    @Override
+    public void onResume()
+    {
+        initUI();
+        super.onResume();
+    }
+
+
 
     // location data setup
     private HashMap<String, android.location.Location> loadLocationData(){
@@ -138,7 +146,9 @@ public class LocationList extends AppCompatActivity {
         {
             BufferedReader b = null;
             try {
-               b = new BufferedReader(new InputStreamReader(getAssets().open("au_locations.txt")));
+                //get data from file
+                /*b = new BufferedReader(new InputStreamReader(getAssets().open("au_locations.txt")));*/
+                b = new BufferedReader(new InputStreamReader(openFileInput("custom_locations.txt")));
             }
             catch (IOException e)
             {
@@ -147,10 +157,12 @@ public class LocationList extends AppCompatActivity {
             String currentLine;
             ArrayList<String> fileData = new ArrayList<String>();
             try{
-                while ((currentLine = b.readLine())!= null)
-                {
-                    fileData.add(currentLine);
-                    Log.i("locationName",currentLine);
+                if (b != null) {
+                    while ((currentLine = b.readLine())!= null)
+                    {
+                        fileData.add(currentLine);
+                        Log.i("added_locationName",currentLine);
+                    }
                 }
 
             }
@@ -160,14 +172,17 @@ public class LocationList extends AppCompatActivity {
             }
             for(String s : fileData)
             {
-                String[] data = s.split(",");
-                String cityName = data[0];
-                double latitude = Double.parseDouble(data[1]);
-                double longitude = Double.parseDouble(data[2]);
-                android.location.Location locData = new android.location.Location("");
-                locData.setLatitude(latitude);
-                locData.setLongitude(longitude);
-                locations.put(cityName, locData);
+                String trimdata = s.trim();
+                if(!trimdata.equals("")) {
+                    String[] data = s.split(",");
+                    String cityName = data[0];
+                    Double latitude = Double.parseDouble(data[1]);
+                    Double longitude = Double.parseDouble(data[2]);
+                    android.location.Location locData = new android.location.Location("");
+                    locData.setLatitude(latitude);
+                    locData.setLongitude(longitude);
+                    locations.put(cityName, locData);
+                }
             }
         }
         return locations;
