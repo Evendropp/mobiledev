@@ -5,4 +5,9 @@
     <string name="image_date">Image Date example</string>
     <string name="hint_name">Edit Name here</string>
     <string name="saved">Save and return</string>
+    <string name="edit_location"> Edit location</string>
+    <string name="edit_keywords">Edit Keywords</string>
+    <string name="is_shareable">Shared?</string>
+    <string name="edit_rating">Edit Rating</string>
+    <string name="edit_owner">Edit Owner</string>
 </resources>

@@ -12,6 +12,11 @@ public class Fruits implements Parcelable{
     // constructor
     public Fruits(String name,String date )
     {
+        update(name, date);
+    }
+
+    public void update(String name, String date)
+    {
         this.name = name;
         this.date = date;
     }
@@ -33,7 +38,7 @@ public class Fruits implements Parcelable{
     }
 
     //parcelling
-    public Fruits(Parcel in) {
+    private Fruits(Parcel in) {
         this.date = in.readString();
         this.name = in.readString();
     }
@@ -49,7 +54,7 @@ public class Fruits implements Parcelable{
         return 0;
     }
 
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+    public static final Parcelable.Creator<Fruits> CREATOR = new Parcelable.Creator<Fruits>() {
         @Override
         public Fruits createFromParcel(Parcel in) {
             return new Fruits(in);

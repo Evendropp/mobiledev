@@ -10,35 +10,57 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class FormActivity extends AppCompatActivity {
 
     private Fruits activeMango;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.active_image);
-        initiliseUI();
+        initiliseUI(savedInstanceState);
     }
 
-    public void initiliseUI()
+    public void initiliseUI(Bundle bundle)
     {
-        Bundle bundle = getIntent().getExtras();
-        activeMango = bundle.getParcelable("mangoFocus");
-        Drawable drawable = getResources().getDrawable(bundle.getInt("Drawable"));
+        Bundle data = getIntent().getExtras();
+        //activeMango = bundle.getParcelable("mangoFocus");
+        //Drawable drawable = getResources().getDrawable(bundle.getInt("Drawable"));
 
         ImageView setImage = findViewById(R.id.focus_image);
-        TextView setTextName = findViewById(R.id.item_name);
+        TextView setTextName = findViewById(R.id.item_name_edit);
 
-        setImage.setImageDrawable(drawable);
-        setTextName.setText(activeMango.getName());
+        setImage.setOnFocusChangeListener(fcl);
+        setTextName.setOnFocusChangeListener(fcl);
+        //setImage.setImageDrawable(drawable);
+        //setTextName.setText(activeMango.getName());
 
         //button listener
-        Button saver = findViewById(R.id.save_return_button);
-        saver.setOnClickListener(saveButt);
+        //Button saver = findViewById(R.id.save_return_button);
+        //saver.setOnClickListener(saveButt);
     }
 
+    protected void onSavedInstanceState(Bundle state)
+    {
+        EditText name = findViewById(R.id.item_name_edit);
+        name.setOnFocusChangeListener(fcl);
 
-    View.OnClickListener saveButt = new View.OnClickListener() {
+        super.onSaveInstanceState(state);
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data)
+    {
+        ArrayList<Fruits> fruitRes = data.getParcelableArrayListExtra("mangoData");
+        Fruits f = fruitRes.get(0);
+
+        super.onActivityResult(requestCode,resultCode,data);
+    }
+
+    /*View.OnClickListener saveButt = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             // save data
@@ -46,13 +68,57 @@ public class FormActivity extends AppCompatActivity {
             activeMango.setName(textName.getText().toString());
             returnToMain();
         }
+    };*/
+
+    View.OnFocusChangeListener fcl = new View.OnFocusChangeListener(){
+        @Override
+        public void onFocusChange(View v, boolean hasFocus)
+        {
+            saveFruits();
+        }
     };
 
-    public void returnToMain()
+    @Override
+    public void onBackPressed()
+    {
+        saveFruits();
+        Intent result = new Intent();
+        ArrayList<Fruits> fruits = new ArrayList<Fruits>();
+        fruits.add(activeMango);
+        result.putParcelableArrayListExtra("mangoData",fruits);
+        result.putExtra("mangoView",getIntent().getStringExtra("mango"));
+        setResult(RESULT_OK,result);
+        super.onBackPressed();
+
+    }
+    public void saveFruits ()
+    {
+        String editName = findViewById(R.id.item_name_edit).toString();
+
+        String editDate = findViewById(R.id.edit_date).toString();
+
+        if(activeMango == null) {
+            activeMango = new Fruits(editName, editDate);
+        }
+        else
+        {
+            activeMango.update(editName, editDate);
+        }
+    }
+
+    private void restoreState(Bundle state)
+    {
+        if(state == null) return;
+
+        EditText name = findViewById(R.id.item_name_edit);
+
+    }
+
+   /* public void returnToMain()
     {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("mango", activeMango);
         startActivity(intent);
     }
-
+*/
 }
